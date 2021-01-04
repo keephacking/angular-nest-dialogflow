@@ -1,0 +1,22 @@
+<div class="chat-output" id="chat-output">
+  <div [class]="message.type + '-message'" *ngFor="let message of messages">
+    <div class="message">{{ message.text }}</div>
+  </div>
+</div>
+
+<div class="chat-input">
+  <form
+    action="#0"
+    id="user-input-form"
+    [formGroup]="botForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <input
+      type="text"
+      id="user-input"
+      class="user-input"
+      placeholder="Talk to the bot."
+      formControlName="text"
+    />
+  </form>
+</div>
